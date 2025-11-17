@@ -1,13 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Bar SơnJs</title>
+  <style>
+    /* Reset cơ bản */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar container */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Menu chính */
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .menu li {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      display: block;
+    }
+
+    .menu li:hover {
+      background-color: #444;
+      border-radius: 4px;
+    }
+
+    /* Menu con */
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #444;
+      list-style: none;
+      min-width: 100px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .submenu li a {
+      padding: 8px 12px;
+    }
+
+    .menu li:hover .submenu {
+      display: block;
+    }
+
+    /* Right side icons */
+    .right-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .right-icons input[type="text"] {
+      padding: 5px 8px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .right-icons button {
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .right-icons button:hover {
+      background-color: #666;
+    }
+  </style>
 </head>
 <body>
-    <h1>Học lập trình cùng Sơn</h1>
-    <h2>xin chào</h2>
-    <h5>day la nhanh main</h5>
+
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">SơnJs</div>
+
+    <!-- Menu chính -->
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li>
+        <a href="#">Shop</a>
+        <ul class="submenu">
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contract</a></li>
+    </ul>
+
+    <!-- Tìm kiếm và giỏ hàng -->
+    <div class="right-icons">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button>🛒</button>
+    </div>
+  </nav>
+
 </body>
 </html>
